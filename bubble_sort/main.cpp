@@ -4,6 +4,7 @@ using namespace std;
 
 int main(){
     int n; cin>>n;
+    bool swap = false;
     vector<int> vec(n);
     for(int i=0;i<n;i++) cin>>vec[i];
 
@@ -15,8 +16,10 @@ int main(){
                 int temp = vec[i];
                 vec[i] = vec[j];
                 vec[j] = temp;
+                bool swap = true;
             }
         }
+        if(swap == false) break;
     }
 
     for(auto x:vec) cout<<x<<" ";
